@@ -1,29 +1,46 @@
-![cf](http://i.imgur.com/7v5ASc8.png) OAuth
-===========================================
+##  Lab 14 - OAuth
 
-## Before you begin
-* You'll need to initialize this lab folder as a new node module, install your dependencies, setup your npm script commands, and pull in your config files
-* You've been provided a server code with the authentication middleware, models and routes scaffolded in. There are some potential bugs and missing logic.
-* Work with a partner!
+###  Build Instructions
 
-## Submission Instructions
-  * Follow the instructions in the "Lab Instructions" documentation in the reference folder of the class repository
+  - Both servers are contained in the same repo
+    - /auth-server contains the backend server
+    - /web-server contains the front end server
+      - both can be built with `npm i` and then started with `npm start`
 
-## Assignment
-### Requirements
-- Your instructor will assign you a (not-Google) OAuth provider to integrate with. Sites such as Yahoo, Github, Facebook, and AWS all have OAuth mechanisms that work almost exactly like Google.
 
-This is a paired lab that will have you integrating OAuth with any provider.
+####  Description
 
-#### backend
-* create an account/app/credential on your assigned OAuth Provider
- * configure oauth credentials to support a client app on `http://localhost`
- * configure oauth credentials to support a server redirect uri to `http://localhost:3000/oauth`
-* create a backend route `GET /oauth` for handling oauth redirects
+This app provides an oauth login interface through the GitHub oauth api.  
 
-#### frontend
-* create an index.html with an anchor tag pointing to the google authorization page
-* configure the query string with correct key value pairs
+There is also a user sign-up sign-in interface that we were given.  
 
-#### Documentation
-Write a description of the project in your README.md, including detailed instructions for how to build your app. In your frontend README.md add a code block with your frontend .env vars, and in your backend README.md add a code block with your backend .env vars.
+
+###  Back End
+
+
+.env variables:
+
+```
+PORT=3000
+GITHUB_CLIENT_ID=7d76d491d83ba05335bd
+
+
+GITHUB_URL=https://github.com/login/oauth/
+CLIENT_URI=http://localhost:3000/
+STORAGE=mongo
+MONGODB_URI=mongodb://heroku_jzbktcp7:lm32lnfpdon634jb4niltvjv4m@ds159263.mlab.com:59263/heroku_jzbktcp7
+API_URL=http://localhost:3000
+```
+
+I had to use the mongo db that Ashley Breunich deployed to Heroku because I can't get my local one to connect to anything.
+
+I don't want to push my github credentials in a readme so they are included in the canvas submission comments.
+
+
+###  Front End
+
+
+This consists of a simple user sign-up/sign-in interface, and a link for logging in through github's oauth service, which is the portion we worked on.  Clicking on it brings up their Oauth pop-up, and logging in successfully returns a valid token (verified with JWT.io)  Screenshots of both are linked below.
+
+![/assets/login.png](Login Token)
+![/assets/jwt.png](Decoded)
