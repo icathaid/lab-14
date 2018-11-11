@@ -43,5 +43,6 @@ I don't want to push my github credentials in a readme so they are included in t
 This consists of a simple user sign-up/sign-in interface, and a link for logging in through github's oauth service, which is the portion we worked on.  Clicking on it brings up their Oauth pop-up, and logging in successfully returns a valid token (verified with JWT.io)  Screenshots of both are linked below.
 
 
-![login screen][/assets/login.png]]
-![jwt decoded](/assets/jwt.png)
+
+[![login screen](./assets/login.png)](login.png)
+[![jwt decoded screen](./assets/jwt.png)](jwt.png)
