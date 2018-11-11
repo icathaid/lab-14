@@ -2,11 +2,12 @@
 
 ###  Build Instructions
 
-  - Both servers are contained in the same repo
+  - Both servers are contained in the same repo on `Master` branch
     - /auth-server contains the backend server
     - /web-server contains the front end server
       - both can be built with `npm i` and then started with `npm start`
 
+In order to deploy both of these to heroku, I had to split the app into two branches and deploy them each separately, so the `auth-server` branch contains only the back end code, and the `web-server` branch contains only the front end code.
 
 ####  Description
 
@@ -16,6 +17,9 @@ There is also a user sign-up sign-in interface that we were given.
 
 
 ###  Back End
+
+
+Heroku Deployment:  https://lab-14-auth-server.herokuapp.com/
 
 
 .env variables:
