@@ -33,7 +33,7 @@ userSchema.pre('save', function(next) {
 
 userSchema.statics.createFromOAuth = function(incoming) {
 
-  if ( ! incoming || ! incoming.email ) {
+  if ( ! incoming ) {
     return Promise.reject('VALIDATION ERROR: missing username/email or password ');
   }
 
@@ -45,7 +45,7 @@ userSchema.statics.createFromOAuth = function(incoming) {
     })
     .catch( error => {
     // Create the user
-      let username = incoming.email;
+      let username = incoming.login;
       let password = 'none';
       return this.create({
         username: username,
